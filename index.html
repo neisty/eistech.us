@@ -161,23 +161,11 @@ p{margin:0}
 .contact-lines .icon-box svg{width:22px;height:22px;stroke-width:2}
 .contact-lines a{color:var(--accent-text);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
 .contact-lines a:hover{color:var(--accent-dark)}
-.contact-cta{align-self:flex-start}
-.form{width:600px;flex-shrink:0;padding:40px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 60px rgba(60,35,15,.08);display:flex;flex-direction:column;gap:20px}
-.form h3{font-weight:700;font-size:26px}
-.form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.field{display:flex;flex-direction:column;gap:8px}
-.field label,.field legend{font-size:14px;font-weight:600;padding:0}
-.field input,.field textarea{min-height:50px;padding:0 16px;border:1px solid var(--line-2);border-radius:10px;font-size:16px;font-family:inherit;background:var(--ground);color:var(--ink);width:100%}
-.field textarea{height:120px;padding:14px 16px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(196,71,27,.18)}
-fieldset.field{border:0;margin:0;padding:0}
-.need{display:flex;flex-wrap:wrap;gap:10px;margin-top:2px}
-.need input{position:absolute;opacity:0;pointer-events:none}
-.need label{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line-2);background:#fff;font-size:15px;font-weight:500;display:inline-flex;align-items:center;cursor:pointer}
-.need input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:600}
-.need input:focus-visible+label{outline:3px solid var(--amber);outline-offset:2px}
-.form .btn{width:100%}
-.form-note{font-size:14px;color:var(--muted);min-height:20px}
+.booking{width:600px;flex-shrink:0;padding:40px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 60px rgba(60,35,15,.08);display:flex;flex-direction:column;gap:16px}
+.booking h3{font-weight:700;font-size:26px}
+.booking p{color:var(--muted)}
+.booking-embed{width:100%;height:520px;border:0;border-radius:12px;background:var(--ground)}
+.booking .btn{width:100%}
 
 .site-footer{background:var(--ink);color:var(--on-dark)}
 .site-footer .wrap{padding-top:64px;padding-bottom:48px;display:flex;flex-direction:column;gap:48px}
@@ -200,7 +188,7 @@ fieldset.field{border:0;margin:0;padding:0}
   .hero-visual{align-self:center}
   .why .wrap,.faq .wrap,.contact .wrap{flex-direction:column;gap:48px}
   .why-intro,.faq-intro{width:auto}
-  .form{width:100%}
+  .booking{width:100%}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:900px){
@@ -236,7 +224,7 @@ fieldset.field{border:0;margin:0;padding:0}
   .section .wrap,.how .wrap,.why .wrap,.faq .wrap,.contact .wrap{padding-top:64px;padding-bottom:64px}
   .section-head,.plans-head{margin-bottom:28px}
   .plans-head{text-align:left;align-items:flex-start}
-  .grid-3,.why-grid,.steps,.form-row{grid-template-columns:1fr}
+  .grid-3,.why-grid,.steps{grid-template-columns:1fr}
   .steps{margin-top:28px;gap:24px}
   .step-num{font-size:30px}
   .card,.why-item{padding:24px}
@@ -244,7 +232,7 @@ fieldset.field{border:0;margin:0;padding:0}
   .price b{font-size:36px}
   .faq details{padding:0 20px}
   .faq summary{font-size:17px;padding:20px 0}
-  .form{padding:22px}
+  .booking{padding:22px}
   .foot-cols{gap:48px}
 }
 </style>
@@ -439,7 +427,7 @@ fieldset.field{border:0;margin:0;padding:0}
           <li><svg class="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Email help desk</li>
           <li><svg class="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Security and backups</li>
         </ul>
-        <a class="btn btn-outline" href="#contact" data-plan="Starter">Choose Starter</a>
+        <a class="btn btn-outline" href="#contact">Choose Starter</a>
       </article>
       <article class="plan featured">
         <div class="plan-top"><h3>Growth</h3><span class="badge">Most popular</span></div>
@@ -451,7 +439,7 @@ fieldset.field{border:0;margin:0;padding:0}
           <li><svg class="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>One short video each month</li>
           <li><svg class="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Phone and video call support</li>
         </ul>
-        <a class="btn btn-primary" href="#contact" data-plan="Growth">Choose Growth</a>
+        <a class="btn btn-primary" href="#contact">Choose Growth</a>
       </article>
       <article class="plan">
         <h3>Partner</h3>
@@ -463,7 +451,7 @@ fieldset.field{border:0;margin:0;padding:0}
           <li><svg class="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Staff devices and accounts</li>
           <li><svg class="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Quarterly planning session</li>
         </ul>
-        <a class="btn btn-outline" href="#contact" data-plan="Partner">Talk to us</a>
+        <a class="btn btn-outline" href="#contact">Talk to us</a>
       </article>
     </div>
   </div>
@@ -491,35 +479,18 @@ fieldset.field{border:0;margin:0;padding:0}
       <div class="eyebrow">Get in touch</div>
       <h2 class="h2">Let's make your tech one less thing to worry about.</h2>
       <p class="lead">Book a free 30 minute consultation. We will listen, ask a few questions and suggest a sensible next step.</p>
-      <a class="btn btn-primary contact-cta" href="https://calendly.com/nasireisty" target="_blank" rel="noopener">Book a meeting</a>
       <div class="contact-lines">
         <div><span class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><a href="mailto:eisty@eistech.us">eisty@eistech.us</a></div>
         <div><span class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span>Knoxville, Tennessee</span></div>
       </div>
     </div>
 
-    <!-- Replace action with your form handler (for example Formspree, Netlify Forms, or your own endpoint). -->
-    <form class="form" id="contact-form" action="#" method="post" novalidate>
-      <h3>Tell us about your project</h3>
-      <div class="form-row">
-        <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required></div>
-        <div class="field"><label for="business">Business name</label><input id="business" name="business" type="text" autocomplete="organization" placeholder="Smith Family Dental"></div>
-      </div>
-      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="jane@yourbusiness.com" required></div>
-      <fieldset class="field">
-        <legend>What do you need help with?</legend>
-        <div class="need">
-          <input type="checkbox" id="n-web" name="need" value="Website" checked><label for="n-web">Website</label>
-          <input type="checkbox" id="n-app" name="need" value="App"><label for="n-app">App</label>
-          <input type="checkbox" id="n-video" name="need" value="Video"><label for="n-video">Video</label>
-          <input type="checkbox" id="n-support" name="need" value="Ongoing support"><label for="n-support">Ongoing support</label>
-          <input type="checkbox" id="n-unsure" name="need" value="Not sure yet"><label for="n-unsure">Not sure yet</label>
-        </div>
-      </fieldset>
-      <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="A few words about what you have in mind"></textarea></div>
-      <button class="btn btn-primary" type="submit">Request my free consultation</button>
-      <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
-    </form>
+    <div class="booking">
+      <h3>Book a free consultation</h3>
+      <p>Pick a time that works for you. You will get a calendar invite right away.</p>
+      <iframe class="booking-embed" src="https://calendly.com/nasireisty/30-minute-meeting?embed_type=Inline&amp;embed_domain=eistech.us&amp;hide_gdpr_banner=1&amp;hide_event_type_details=1&amp;hide_landing_page_details=1&amp;primary_color=c4471b" title="Book a meeting with eistech on Calendly" loading="lazy"></iframe>
+      <a class="btn btn-primary" href="https://calendly.com/nasireisty/30-minute-meeting" target="_blank" rel="noopener">Open booking page</a>
+    </div>
   </div>
 </section>
 
@@ -558,33 +529,6 @@ fieldset.field{border:0;margin:0;padding:0}
     menuBtn.setAttribute('aria-expanded', 'false');
     menuBtn.setAttribute('aria-label', 'Open menu');
   }));
-
-  // Plan buttons prefill the message
-  document.querySelectorAll('[data-plan]').forEach(btn => btn.addEventListener('click', () => {
-    const msg = document.getElementById('message');
-    if (!msg.value) msg.value = 'I am interested in the ' + btn.dataset.plan + ' plan.';
-  }));
-
-  // Contact form: basic validation. Connect the form action to a real handler to receive submissions.
-  const form = document.getElementById('contact-form');
-  const note = document.getElementById('form-note');
-  form.addEventListener('submit', (e) => {
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      e.preventDefault();
-      note.style.color = '#8A2F0E';
-      note.textContent = 'Add your name and a valid email so we can reply.';
-      (name ? form.email : form.name).focus();
-      return;
-    }
-    if (form.getAttribute('action') === '#') {
-      e.preventDefault();
-      note.style.color = '#1F5F2E';
-      note.textContent = 'Thanks, ' + name.split(' ')[0] + '. We will be in touch soon.';
-      form.reset();
-    }
-  });
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
