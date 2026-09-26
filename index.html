@@ -58,10 +58,18 @@ p{margin:0}
 .mobile-nav{display:none}
 
 /* hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(ellipse 55% 70% at 8% 0%,rgba(240,160,58,.20),transparent 70%),
+  radial-gradient(ellipse 50% 65% at 95% 100%,rgba(232,98,42,.16),transparent 70%),
+  var(--ground)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(20,18,16,.10) 1px,transparent 1.4px);background-size:24px 24px;
+  -webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 70% at 50% 45%,#000,transparent 75%)}
+.hero .wrap{position:relative}
 .hero .wrap{padding-top:112px;padding-bottom:112px;display:flex;justify-content:center}
 .hero-copy{max-width:900px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
 .hero h1{font-weight:800;font-size:clamp(44px,6.2vw,84px);line-height:1.02;letter-spacing:-2px}
-.hero .lead{font-size:20px;max-width:640px}
+.hero .lead{font-size:20px;max-width:640px;text-wrap:balance}
 .hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px}
 .hero-points{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:4px;font-size:15px;color:var(--muted)}
 .hero-points span{display:flex;align-items:center;gap:8px}
@@ -89,9 +97,14 @@ p{margin:0}
 .section-head .lead{max-width:420px}
 .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .card{padding:36px;background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;gap:16px}
+#services .card:nth-child(4n+1) .icon-box{background:var(--orange)}
+#services .card:nth-child(4n+2) .icon-box{background:var(--amber)}
+#services .card:nth-child(4n+3) .icon-box{background:var(--gold)}
+#services .card:nth-child(4n) .icon-box{background:var(--ink)}
+#services .card:nth-child(4n+1) .icon-box svg,#services .card:nth-child(4n) .icon-box svg{stroke:#fff}
+#services .card:nth-child(4n+2) .icon-box svg,#services .card:nth-child(4n+3) .icon-box svg{stroke:var(--ink)}
 .card h3{font-weight:700;font-size:24px}
 .card p{font-size:16px;line-height:1.6;color:var(--muted)}
-.card .includes{font-size:14px;color:var(--soft);line-height:1.7}
 
 .how{background:#fff;border-top:1px solid #EDE3D8;border-bottom:1px solid #EDE3D8}
 .how .wrap{padding-top:112px;padding-bottom:112px}
@@ -103,16 +116,13 @@ p{margin:0}
 .steps p{font-size:16px;line-height:1.6;color:var(--muted)}
 
 .why{background:var(--ink);color:#fff}
-.why .wrap{padding-top:112px;padding-bottom:112px;display:flex;gap:80px}
-.why-intro{width:460px;flex-shrink:0;display:flex;flex-direction:column;gap:20px}
+.why .wrap{padding-top:88px;padding-bottom:88px;display:flex;flex-direction:column;gap:40px}
+.why-intro{display:flex;flex-direction:column;gap:16px}
 .why .eyebrow{color:var(--peach)}
-.why .lead{color:var(--on-dark)}
-.why-squares{display:flex;gap:10px;margin-top:12px}
-.why-squares i{width:40px;height:40px;border-radius:9px;display:block}
-.why-grid{flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.why-item{padding:32px;border-radius:18px;background:var(--ink-2);border:1px solid var(--ink-line);display:flex;flex-direction:column;gap:12px}
-.why-item h3{font-weight:700;font-size:22px}
-.why-item p{font-size:16px;line-height:1.6;color:var(--on-dark)}
+.why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.why-item{padding:24px;border-radius:16px;background:var(--ink-2);border:1px solid var(--ink-line);display:flex;align-items:center;gap:14px}
+.why-item svg{width:22px;height:22px;flex-shrink:0;fill:none;stroke:var(--peach);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.why-item h3{font-weight:700;font-size:18px;line-height:1.3}
 
 .team{background:#fff;border-top:1px solid #EDE3D8;border-bottom:1px solid #EDE3D8}
 .member{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
@@ -163,7 +173,6 @@ p{margin:0}
 .contact-lines a:hover{color:var(--accent-dark)}
 .booking{width:600px;flex-shrink:0;padding:40px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 60px rgba(60,35,15,.08);display:flex;flex-direction:column;gap:16px}
 .booking h3{font-weight:700;font-size:26px}
-.booking p{color:var(--muted)}
 .booking-embed{width:100%;height:520px;border:0;border-radius:12px;background:var(--ground)}
 .booking .btn{width:100%}
 
@@ -184,8 +193,9 @@ p{margin:0}
 /* responsive */
 @media (max-width:1200px){
   :root{--pad:48px}
-  .why .wrap,.faq .wrap,.contact .wrap{flex-direction:column;gap:48px}
-  .why-intro,.faq-intro{width:auto}
+  .faq .wrap,.contact .wrap{flex-direction:column;gap:48px}
+  .faq-intro{width:auto}
+  .why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .booking{width:100%}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -225,7 +235,8 @@ p{margin:0}
   .team-lead .member{width:100%}
   .steps{margin-top:28px;gap:24px}
   .step-num{font-size:30px}
-  .card,.why-item{padding:24px}
+  .card{padding:24px}
+  .why-item{padding:18px 20px}
   .plan{padding:26px}
   .price b{font-size:36px}
   .faq details{padding:0 20px}
@@ -274,7 +285,7 @@ p{margin:0}
     <div class="hero-copy">
       <div class="eyebrow">Tech support for your business</div>
       <h1>You run the business. We run the tech.</h1>
-      <p class="lead">Websites, apps, videos and everyday tech help for companies that would rather not hire an IT department. One team, plain language, and a clear plan for every request.</p>
+      <p class="lead">Websites, apps, video and everyday tech help, without hiring an IT department.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#contact">Book a free consultation</a>
         <a class="btn btn-outline" href="#services">See our services</a>
@@ -314,44 +325,37 @@ p{margin:0}
         <div class="eyebrow">Services</div>
         <h2 class="h2">Everything digital, handled by one team</h2>
       </div>
-      <p class="lead">Pick a single project or bundle services into a monthly plan. Either way you get the same people who know your business.</p>
     </div>
     <div class="grid-3">
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></div>
         <h3>Websites</h3>
-        <p>New sites, redesigns and the small updates that never seem to get done. Fast, mobile friendly and easy to find on Google.</p>
-        <p class="includes">Includes design and build, content updates, SEO basics, online booking and stores.</p>
+        <p>New sites, redesigns and updates, built to be found on Google.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
         <h3>Apps</h3>
-        <p>Mobile and web apps that fit how you work, from customer portals to simple internal tools that replace messy spreadsheets.</p>
-        <p class="includes">Includes iOS and Android apps, web apps, integrations and bug fixes.</p>
+        <p>Mobile and web apps, from customer portals to internal tools.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg></div>
         <h3>Video</h3>
-        <p>Promo clips, explainers and social videos that show off what you do, edited and sized for every platform.</p>
-        <p class="includes">Includes filming, editing, motion graphics and social cuts.</p>
+        <p>Promo clips, explainers and social videos for every platform.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
         <h3>Ongoing tech support</h3>
-        <p>Send us the tech problems that pile up. We fix them, keep things updated and tell you what we did in plain words.</p>
-        <p class="includes">Includes a help desk, software updates, backups and security checkups.</p>
+        <p>A help desk for everyday problems, plus updates, backups and security.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div>
         <h3>Domains, hosting and email</h3>
-        <p>We set up and look after the plumbing: your domain, reliable hosting and professional email addresses for your team.</p>
-        <p class="includes">Includes domain setup, hosting, business email and SSL.</p>
+        <p>Your domain, hosting and business email, set up and looked after.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8"/></svg></div>
         <h3>Social and digital content</h3>
-        <p>Graphics, posts and online listings that stay consistent with your brand, so customers see a business that is on top of things.</p>
-        <p class="includes">Includes social graphics, Google Business Profile and newsletters.</p>
+        <p>Graphics, posts and listings that keep your brand consistent.</p>
       </article>
     </div>
   </div>
@@ -362,10 +366,10 @@ p{margin:0}
     <div class="eyebrow">How it works</div>
     <h2 class="h2" style="margin-top:16px">Simple from the first call</h2>
     <ol class="steps">
-      <li><div class="step-num"><i style="background:var(--orange)"></i>01</div><h3>Tell us what you need</h3><p>A short, free call about your business, your goals and what is getting in the way.</p></li>
-      <li><div class="step-num"><i style="background:var(--amber)"></i>02</div><h3>Get a clear plan</h3><p>We send a written plan with scope, timeline and price. No surprises and no fine print.</p></li>
-      <li><div class="step-num"><i style="background:var(--orange)"></i>03</div><h3>We build and deliver</h3><p>You see progress along the way and approve the result before anything goes live.</p></li>
-      <li><div class="step-num"><i style="background:var(--ink)"></i>04</div><h3>We stay on call</h3><p>Updates, fixes and new ideas go to the same team, so nothing gets lost between vendors.</p></li>
+      <li><div class="step-num"><i style="background:var(--orange)"></i>01</div><h3>Tell us what you need</h3><p>A free, short call about your goals.</p></li>
+      <li><div class="step-num"><i style="background:var(--amber)"></i>02</div><h3>Get a clear plan</h3><p>Scope, timeline and price, in writing.</p></li>
+      <li><div class="step-num"><i style="background:var(--orange)"></i>03</div><h3>We build and deliver</h3><p>You approve everything before it goes live.</p></li>
+      <li><div class="step-num"><i style="background:var(--ink)"></i>04</div><h3>We stay on call</h3><p>Updates and fixes go to the same team.</p></li>
     </ol>
   </div>
 </section>
@@ -375,14 +379,12 @@ p{margin:0}
     <div class="why-intro">
       <div class="eyebrow">Why eistech</div>
       <h2 class="h2">Like having a tech team down the hall</h2>
-      <p class="lead">Without the salary, the hiring or the guesswork. You focus on customers and we keep the digital side working.</p>
-      <div class="why-squares" aria-hidden="true"><i style="background:var(--orange)"></i><i style="background:var(--amber)"></i><i style="background:var(--gold)"></i></div>
     </div>
     <div class="why-grid">
-      <div class="why-item"><h3>Plain language, always</h3><p>We explain what we are doing and why, in words that make sense to non-tech people.</p></div>
-      <div class="why-item"><h3>One point of contact</h3><p>Websites, apps and video under one roof. One person to call, one invoice to pay.</p></div>
-      <div class="why-item"><h3>Clear, upfront pricing</h3><p>Fixed quotes for projects and predictable monthly plans for ongoing support.</p></div>
-      <div class="why-item"><h3>You own everything</h3><p>Your domain, your code, your files and your accounts stay in your name.</p></div>
+      <div class="why-item"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><h3>Plain language, no jargon</h3></div>
+      <div class="why-item"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><h3>One contact, one invoice</h3></div>
+      <div class="why-item"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><h3>Fixed, upfront pricing</h3></div>
+      <div class="why-item"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><h3>You own your code and accounts</h3></div>
     </div>
   </div>
 </section>
@@ -440,7 +442,7 @@ p{margin:0}
     <div class="faq-intro">
       <div class="eyebrow">FAQ</div>
       <h2 class="h2">Good questions</h2>
-      <p class="lead">Something else on your mind? Send us a note and a real person will answer.</p>
+      <p class="lead">Something else? Email us and a real person will answer.</p>
     </div>
     <div class="faq-list">
       <details open><summary>Do I need to know anything about tech?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Not at all. Tell us what you want to happen and we figure out how to make it work.</p></details>
@@ -456,7 +458,7 @@ p{margin:0}
     <div class="contact-copy">
       <div class="eyebrow">Get in touch</div>
       <h2 class="h2">Let's make your tech one less thing to worry about.</h2>
-      <p class="lead">Book a free 30 minute consultation. We will listen, ask a few questions and suggest a sensible next step.</p>
+      <p class="lead">Book a free 30-minute call. We'll listen and suggest a sensible next step.</p>
       <div class="contact-lines">
         <div><span class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><a href="mailto:eisty@eistech.us">eisty@eistech.us</a></div>
         <div><span class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span>Knoxville, Tennessee</span></div>
@@ -465,7 +467,6 @@ p{margin:0}
 
     <div class="booking">
       <h3>Book a free consultation</h3>
-      <p>Pick a time that works for you. You will get a calendar invite right away.</p>
       <iframe class="booking-embed" src="https://calendly.com/nasireisty/30-minute-meeting?embed_type=Inline&amp;embed_domain=eistech.us&amp;hide_gdpr_banner=1&amp;hide_event_type_details=1&amp;hide_landing_page_details=1&amp;primary_color=c4471b" title="Book a meeting with eistech on Calendly" loading="lazy"></iframe>
       <a class="btn btn-primary" href="https://calendly.com/nasireisty/30-minute-meeting" target="_blank" rel="noopener">Open booking page</a>
     </div>
@@ -479,7 +480,6 @@ p{margin:0}
         <div class="eyebrow">Team</div>
         <h2 class="h2">The people you'll work with</h2>
       </div>
-      <p class="lead">A small team that learns your business and stays with it, so you never have to explain things twice.</p>
     </div>
     <!-- To add a photo, put it in a "team" folder and replace the placeholder div with:
          <img class="member-photo" src="team/firstname.jpg" alt="Full Name">
