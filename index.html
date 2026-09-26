@@ -122,6 +122,12 @@ p{margin:0}
 .why-item h3{font-weight:700;font-size:22px}
 .why-item p{font-size:16px;line-height:1.6;color:var(--on-dark)}
 
+.team{background:#fff;border-top:1px solid #EDE3D8;border-bottom:1px solid #EDE3D8}
+.member{display:flex;flex-direction:column;gap:6px}
+.member-photo{width:50%;aspect-ratio:1/1;object-fit:cover;object-position:50% 20%;border-radius:20px;background:var(--sand);margin-bottom:14px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:40px;color:var(--line-2)}
+.member h3{font-weight:700;font-size:22px}
+.member .role{font-size:15px;font-weight:600;color:var(--accent-text)}
+
 .plans-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:56px}
 .plans-head .lead{max-width:620px}
 .plan{padding:40px;background:#fff;border:1px solid var(--line);border-radius:22px;display:flex;flex-direction:column;gap:22px}
@@ -251,6 +257,7 @@ p{margin:0}
       <a href="#plans">Plans</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <a href="#team">Team</a>
     </nav>
     <a class="btn btn-dark header-cta" href="#contact">Get support</a>
     <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -263,6 +270,7 @@ p{margin:0}
     <a href="#plans">Plans</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
+    <a href="#team">Team</a>
     <a class="btn btn-primary" href="#contact">Get support</a>
   </nav>
 </header>
@@ -490,6 +498,68 @@ p{margin:0}
       <p>Pick a time that works for you. You will get a calendar invite right away.</p>
       <iframe class="booking-embed" src="https://calendly.com/nasireisty/30-minute-meeting?embed_type=Inline&amp;embed_domain=eistech.us&amp;hide_gdpr_banner=1&amp;hide_event_type_details=1&amp;hide_landing_page_details=1&amp;primary_color=c4471b" title="Book a meeting with eistech on Calendly" loading="lazy"></iframe>
       <a class="btn btn-primary" href="https://calendly.com/nasireisty/30-minute-meeting" target="_blank" rel="noopener">Open booking page</a>
+    </div>
+  </div>
+</section>
+
+<section class="section team" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="titles">
+        <div class="eyebrow">Team</div>
+        <h2 class="h2">The people you'll work with</h2>
+      </div>
+      <p class="lead">A small team that learns your business and stays with it, so you never have to explain things twice.</p>
+    </div>
+    <!-- To add a photo, put it in a "team" folder and replace the placeholder div with:
+         <img class="member-photo" src="team/firstname.jpg" alt="Full Name">
+         To add a person, copy one <article class="member"> block. -->
+    <div class="grid-3">
+      <article class="member">
+        <img class="member-photo" src="team/moumita-tabassum.jpg" alt="Moumita Tabassum">
+        <h3>Moumita Tabassum</h3>
+        <div class="role">Chairman</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/nasir-eisty.jpg" alt="Nasir Eisty">
+        <h3>Nasir Eisty</h3>
+        <div class="role">Founder and CEO</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/shane-panter.jpg" alt="Shane Panter">
+        <h3>Shane Panter</h3>
+        <div class="role">CTO</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/tiancheng-ma.jpg" alt="Tiancheng Ma">
+        <h3>Tiancheng Ma</h3>
+        <div class="role">Head of Mobile Applications</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/claudia-levi.jpg" alt="Claudia Levi">
+        <h3>Claudia Levi</h3>
+        <div class="role">Head of Data Analytics</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/eric-melin.jpg" alt="Eric Melin">
+        <h3>Eric Melin</h3>
+        <div class="role">Head of Web Applications</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/samuel-storey.jpg" alt="Samuel Storey">
+        <h3>Samuel Storey</h3>
+        <div class="role">Head of Machine Learning</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/joseph-bronyah.jpg" alt="Joseph Bronyah">
+        <h3>Joseph Bronyah</h3>
+        <div class="role">Head of Quantum Software</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/alex-vathana.jpg" alt="Alex Vathana">
+        <h3>Alex Vathana</h3>
+        <div class="role">Head of Graphics</div>
+      </article>
     </div>
   </div>
 </section>
