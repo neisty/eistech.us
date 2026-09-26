@@ -58,30 +58,22 @@ p{margin:0}
 .mobile-nav{display:none}
 
 /* hero */
-.hero .wrap{padding-top:96px;padding-bottom:104px;display:flex;align-items:center;gap:72px}
-.hero-copy{flex:1;display:flex;flex-direction:column;gap:28px}
-.hero h1{font-weight:800;font-size:clamp(44px,5.6vw,76px);line-height:1.02;letter-spacing:-2px}
-.hero .lead{font-size:20px;max-width:560px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
-.hero-points{display:flex;gap:28px;flex-wrap:wrap;margin-top:12px;font-size:15px;color:var(--muted)}
+.hero .wrap{padding-top:112px;padding-bottom:112px;display:flex;justify-content:center}
+.hero-copy{max-width:900px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+.hero h1{font-weight:800;font-size:clamp(44px,6.2vw,84px);line-height:1.02;letter-spacing:-2px}
+.hero .lead{font-size:20px;max-width:640px}
+.hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px}
+.hero-points{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:4px;font-size:15px;color:var(--muted)}
 .hero-points span{display:flex;align-items:center;gap:8px}
 .hero-points svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.hero-visual{width:560px;height:540px;position:relative;flex-shrink:0}
-.sq{position:absolute;border-radius:14px}
-.req-card{position:absolute;left:40px;top:60px;width:470px;padding:28px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px rgba(60,35,15,.12);display:flex;flex-direction:column;gap:16px}
-.req-head{display:flex;align-items:center;justify-content:space-between}
-.req-head strong{font-family:var(--display);font-weight:700;font-size:20px}
-.pill{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--tint);color:var(--accent-dark)}
-.req{display:flex;align-items:center;gap:14px;padding:16px;border-radius:14px;background:var(--ground)}
-.req .icon-box{width:44px;height:44px;border-radius:10px}
-.req .icon-box svg{width:22px;height:22px;stroke-width:2}
-.req-body{flex:1;display:flex;flex-direction:column;gap:3px}
-.req-body b{font-weight:600;font-size:15px}
-.req-body small{font-size:13px;color:var(--soft)}
-.status{font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;white-space:nowrap}
-.s-done{background:#E3F1E6;color:#1F5F2E}.s-prog{background:var(--tint);color:var(--accent-dark)}.s-sched{background:#ECE7E1;color:var(--text)}
-.req-foot{display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid #EDE3D8;font-size:14px;color:var(--muted)}
-.avatar{width:36px;height:36px;border-radius:999px;background:var(--ink);color:#fff;font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-team{display:flex;align-items:center;gap:16px;margin-top:16px;padding:10px 20px 10px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:15px;color:var(--muted)}
+.hero-team:hover{color:var(--ink);border-color:var(--line-2)}
+.hero-team b{color:var(--ink);font-weight:600}
+.faces{display:flex}
+.faces img,.faces span{width:44px;height:44px;border-radius:999px;border:3px solid #fff;margin-left:-12px;flex-shrink:0}
+.faces img{object-fit:cover;object-position:50% 20%}
+.faces img:first-child{margin-left:0}
+.faces span{background:var(--tint);color:var(--accent-dark);font-family:var(--display);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
 
 /* who */
 .who{background:var(--sand)}
@@ -192,8 +184,6 @@ p{margin:0}
 /* responsive */
 @media (max-width:1200px){
   :root{--pad:48px}
-  .hero .wrap{flex-direction:column;align-items:flex-start;gap:56px}
-  .hero-visual{align-self:center}
   .why .wrap,.faq .wrap,.contact .wrap{flex-direction:column;gap:48px}
   .why-intro,.faq-intro{width:auto}
   .booking{width:100%}
@@ -218,17 +208,14 @@ p{margin:0}
   .brand img{width:38px}
   .brand span{font-size:21px}
   .eyebrow{font-size:12px;letter-spacing:3px}
-  .hero .wrap{padding-top:48px;padding-bottom:56px;gap:40px}
+  .hero .wrap{padding-top:48px;padding-bottom:56px}
+  .hero-copy{gap:22px}
   .hero h1{letter-spacing:-1px}
   .hero .lead{font-size:17px}
   .hero-actions{flex-direction:column;width:100%}
   .hero-actions .btn{width:100%}
   .hero-points{gap:12px 20px}
-  .hero-visual{width:100%;height:auto}
-  .req-card{position:relative;left:0;top:0;width:100%;padding:20px}
-  .hero-visual .sq{display:none}
-  .req{padding:12px}
-  .req .icon-box{display:none}
+  .hero-team{flex-direction:column;gap:10px;padding:14px 18px;border-radius:20px}
   .chips li{padding:9px 14px;font-size:14px}
   .section .wrap,.how .wrap,.why .wrap,.faq .wrap,.contact .wrap{padding-top:64px;padding-bottom:64px}
   .section-head,.plans-head{margin-bottom:28px}
@@ -294,35 +281,13 @@ p{margin:0}
       </div>
       <div class="hero-points">
         <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>No tech jargon</span>
-        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>One point of contact</span>
         <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Flexible monthly plans</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Cancel anytime</span>
       </div>
-    </div>
-
-    <div class="hero-visual" aria-label="Example of a client's support requests">
-      <i class="sq" style="left:404px;top:0;width:72px;height:72px;background:var(--amber)"></i>
-      <i class="sq" style="left:488px;top:58px;width:44px;height:44px;border-radius:10px;background:var(--ink)"></i>
-      <i class="sq" style="left:0;top:440px;width:88px;height:88px;border-radius:16px;background:var(--orange)"></i>
-      <i class="sq" style="left:100px;top:470px;width:44px;height:44px;border-radius:10px;background:var(--gold)"></i>
-      <div class="req-card">
-        <div class="req-head"><strong>Your support requests</strong><span class="pill">Example</span></div>
-        <div class="req">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
-          <div class="req-body"><b>Update holiday hours on website</b><small>Website</small></div>
-          <span class="status s-done">Done</span>
-        </div>
-        <div class="req">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-          <div class="req-body"><b>Fix booking form on mobile</b><small>App</small></div>
-          <span class="status s-prog">In progress</span>
-        </div>
-        <div class="req">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg></div>
-          <div class="req-body"><b>Edit 30 second promo video</b><small>Video</small></div>
-          <span class="status s-sched">Scheduled</span>
-        </div>
-        <div class="req-foot"><span class="avatar">E</span>Your eistech contact keeps you posted on every request.</div>
-      </div>
+      <a class="hero-team" href="#team">
+        <span class="faces" aria-hidden="true"><img src="team/nasir-eisty.jpg" alt=""><img src="team/shane-panter.jpg" alt=""><img src="team/moumita-tabassum.jpg" alt=""><img src="team/eric-melin.jpg" alt=""><img src="team/claudia-levi.jpg" alt=""><img src="team/joseph-bronyah.jpg" alt=""><span>+4</span></span>
+        <span>Talk to real people: <b>Nasir, Shane and the rest of the team</b></span>
+      </a>
     </div>
   </div>
 </section>
