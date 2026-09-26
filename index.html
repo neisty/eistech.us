@@ -123,10 +123,12 @@ p{margin:0}
 .why-item p{font-size:16px;line-height:1.6;color:var(--on-dark)}
 
 .team{background:#fff;border-top:1px solid #EDE3D8;border-bottom:1px solid #EDE3D8}
-.member{display:flex;flex-direction:column;gap:6px}
+.member{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
 .member-photo{width:50%;aspect-ratio:1/1;object-fit:cover;object-position:50% 20%;border-radius:20px;background:var(--sand);margin-bottom:14px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:40px;color:var(--line-2)}
 .member h3{font-weight:700;font-size:22px}
 .member .role{font-size:15px;font-weight:600;color:var(--accent-text)}
+.team-lead{display:flex;justify-content:center;margin-bottom:48px}
+.team-lead .member{width:calc((100% - 48px)/3)}
 
 .plans-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:56px}
 .plans-head .lead{max-width:620px}
@@ -204,6 +206,7 @@ p{margin:0}
   .mobile-nav a{color:var(--ink);font-weight:600;font-size:17px;padding:12px 0}
   .mobile-nav .btn{margin-top:8px;color:#fff}
   .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .team-lead .member{width:calc((100% - 24px)/2)}
   .section-head{flex-direction:column;align-items:flex-start;gap:20px}
   .who .wrap{flex-direction:column;align-items:flex-start;gap:16px}
   .who h2{width:auto}
@@ -231,6 +234,8 @@ p{margin:0}
   .section-head,.plans-head{margin-bottom:28px}
   .plans-head{text-align:left;align-items:flex-start}
   .grid-3,.why-grid,.steps{grid-template-columns:1fr}
+  .team-lead{margin-bottom:24px}
+  .team-lead .member{width:100%}
   .steps{margin-top:28px;gap:24px}
   .step-num{font-size:30px}
   .card,.why-item{padding:24px}
@@ -514,21 +519,28 @@ p{margin:0}
     <!-- To add a photo, put it in a "team" folder and replace the placeholder div with:
          <img class="member-photo" src="team/firstname.jpg" alt="Full Name">
          To add a person, copy one <article class="member"> block. -->
-    <div class="grid-3">
-      <article class="member">
-        <img class="member-photo" src="team/moumita-tabassum.jpg" alt="Moumita Tabassum">
-        <h3>Moumita Tabassum</h3>
-        <div class="role">Chairman</div>
-      </article>
+    <div class="team-lead">
       <article class="member">
         <img class="member-photo" src="team/nasir-eisty.jpg" alt="Nasir Eisty">
         <h3>Nasir Eisty</h3>
         <div class="role">Founder and CEO</div>
       </article>
+    </div>
+    <div class="grid-3">
       <article class="member">
         <img class="member-photo" src="team/shane-panter.jpg" alt="Shane Panter">
         <h3>Shane Panter</h3>
         <div class="role">CTO</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/moumita-tabassum.jpg" alt="Moumita Tabassum">
+        <h3>Moumita Tabassum</h3>
+        <div class="role">Head of Ideas</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/eric-melin.jpg" alt="Eric Melin">
+        <h3>Eric Melin</h3>
+        <div class="role">Head of Web Applications</div>
       </article>
       <article class="member">
         <img class="member-photo" src="team/tiancheng-ma.jpg" alt="Tiancheng Ma">
@@ -539,11 +551,6 @@ p{margin:0}
         <img class="member-photo" src="team/claudia-levi.jpg" alt="Claudia Levi">
         <h3>Claudia Levi</h3>
         <div class="role">Head of Data Analytics</div>
-      </article>
-      <article class="member">
-        <img class="member-photo" src="team/eric-melin.jpg" alt="Eric Melin">
-        <h3>Eric Melin</h3>
-        <div class="role">Head of Web Applications</div>
       </article>
       <article class="member">
         <img class="member-photo" src="team/samuel-storey.jpg" alt="Samuel Storey">
@@ -558,7 +565,12 @@ p{margin:0}
       <article class="member">
         <img class="member-photo" src="team/alex-vathana.jpg" alt="Alex Vathana">
         <h3>Alex Vathana</h3>
-        <div class="role">Head of Graphics</div>
+        <div class="role">Head of Graphics Design</div>
+      </article>
+      <article class="member">
+        <img class="member-photo" src="team/alex-curtis.jpg" alt="Alex Curtis">
+        <h3>Alex Curtis</h3>
+        <div class="role">Head of Cybersecurity</div>
       </article>
     </div>
   </div>
